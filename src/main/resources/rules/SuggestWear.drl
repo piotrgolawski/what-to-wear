@@ -1,0 +1,76 @@
+package com.pgitp.whattowear.forecastApi.models.rules;
+
+import com.pgitp.whattowear.drools.models.Weather;
+
+global com.pgitp.whattowear.drools.models.Equipment suggestEquipment;
+
+dialect  "mvel"
+
+rule "Wear simple jacket"
+    when
+        Weather(tempC < 20)
+        Weather(windKph < 20)
+    then
+        suggestEquipment.take("Jacket");
+end
+
+rule "Wear windbreaker jacket"
+    when
+        Weather(tempC < 20)
+        Weather(windKph > 20)
+    then
+        suggestEquipment.take("Windbreaker Jacket");
+end
+
+rule "Wear warm jacket"
+    when
+        Weather(tempC < 5)
+    then
+        suggestEquipment.take("Warm Jacket");
+end
+
+rule "Wear gloves"
+    when
+        Weather(tempC < 0)
+    then
+        suggestEquipment.take("Gloves");
+end
+
+rule "Take an umbrella"
+    when
+        Weather(canRain)
+        Weather(windKph < 20)
+    then
+        suggestEquipment.take("Umbrella");
+end
+
+rule "Take an suncream"
+    when
+        Weather(tempC > 20)
+        Weather(uv > 6)
+    then
+        suggestEquipment.take("Suncream");
+end
+
+rule "Take a cap"
+    when
+        Weather(uv > 6)
+    then
+        suggestEquipment.take("Cap");
+end
+
+rule "Wear sunglasses"
+    when
+        Weather(uv > 6)
+        Weather(!canRain)
+    then
+        suggestEquipment.take("Sunglasses");
+end
+
+rule "Wear wellingtons"
+    when
+        Weather(tempC < 20)
+        Weather(canRain)
+    then
+        suggestEquipment.take("Wellingtons");
+end
