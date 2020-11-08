@@ -1,4 +1,4 @@
-package com.pgitp.whattowear.service;
+package com.pgitp.whattowear.drools.service;
 
 
 import com.pgitp.whattowear.drools.models.Equipment;
@@ -23,9 +23,10 @@ public class ApplicantServiceIntegrationEquipmentTest {
 
     @Test
     public void whenCriteriaMatching_ThenSuggestWearJacket() throws IOException {
-        Weather weather = new Weather(10d, 30d, 30d, true);
+        Weather weather = new Weather(10d, 30d, 30d, 1.0);
         Equipment suggestEquipment = new Equipment();
         equipmentService.suggestEquipment(weather, suggestEquipment);
-        assertEquals("Windbreaker Jacket, Umbrella", suggestEquipment.getToTakeString());
+
+        assertEquals("Windbreaker Jacket, Cap, Wellingtons", suggestEquipment.getToTakeString());
     }
 }

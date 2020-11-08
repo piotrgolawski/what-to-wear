@@ -1,4 +1,4 @@
-package com.pgitp.whattowear.forecastApi.models;
+package com.pgitp.whattowear.forecastApi.weatherAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -6,18 +6,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Hour {
-
-    @JsonProperty("time_epoch")
-    private Long timeEpoch;
-    @JsonProperty("time")
-    private String time;
+public class Current {
+    @JsonProperty("last_updated_epoch")
+    private Long lastUpdatedEpoch;
+    @JsonProperty("last_updated")
+    private String lastUpdated;
     @JsonProperty("temp_c")
     private Double tempC;
     @JsonProperty("temp_f")
     private Double tempF;
     @JsonProperty("is_day")
     private Long isDay;
+    @JsonProperty("condition")
+    private Condition condition;
     @JsonProperty("wind_mph")
     private Double windMph;
     @JsonProperty("wind_kph")
@@ -42,33 +43,15 @@ public class Hour {
     private Double feelslikeC;
     @JsonProperty("feelslike_f")
     private Double feelslikeF;
-    @JsonProperty("windchill_c")
-    private Double windchillC;
-    @JsonProperty("windchill_f")
-    private Double windchillF;
-    @JsonProperty("heatindex_c")
-    private Double heatindexC;
-    @JsonProperty("heatindex_f")
-    private Double heatindexF;
-    @JsonProperty("dewpoint_c")
-    private Double dewpointC;
-    @JsonProperty("dewpoint_f")
-    private Double dewpointF;
-    @JsonProperty("will_it_rain")
-    private Long willItRain;
-    @JsonProperty("chance_of_rain")
-    private String chanceOfRain;
-    @JsonProperty("will_it_snow")
-    private Long willItSnow;
-    @JsonProperty("chance_of_snow")
-    private String chanceOfSnow;
     @JsonProperty("vis_km")
     private Double visKm;
     @JsonProperty("vis_miles")
     private Double visMiles;
+    @JsonProperty("uv")
+    private Double uv;
     @JsonProperty("gust_mph")
     private Double gustMph;
     @JsonProperty("gust_kph")
     private Double gustKph;
-
 }
+

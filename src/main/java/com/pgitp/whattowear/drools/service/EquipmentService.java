@@ -1,6 +1,6 @@
-package com.pgitp.whattowear.service;
+package com.pgitp.whattowear.drools.service;
 
-import com.pgitp.whattowear.config.DroolsBeanFactory;
+import com.pgitp.whattowear.drools.config.DroolsBeanFactory;
 import com.pgitp.whattowear.drools.models.Equipment;
 import com.pgitp.whattowear.drools.models.Weather;
 import org.kie.api.runtime.KieSession;

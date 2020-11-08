@@ -1,4 +1,4 @@
-package com.pgitp.whattowear.forecastApi.models;
+package com.pgitp.whattowear.forecastApi.weatherAPI.models;
 
 import lombok.Getter;
 import lombok.Setter;

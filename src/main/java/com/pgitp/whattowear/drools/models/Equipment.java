@@ -16,10 +16,9 @@ public class Equipment {
     List<String> toTake = Lists.newArrayList();
 
     public void take(String toTake) {
-        if(!this.toTake.contains(toTake)) {
+        if(!this.toTake.contains(toTake) && toTake.trim().length() > 0) {
             this.toTake.add(toTake);
         }
-
     }
 
     public String getToTakeString() {

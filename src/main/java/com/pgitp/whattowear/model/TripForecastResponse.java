@@ -10,13 +10,11 @@ import java.util.List;
 @Setter
 public class TripForecastResponse {
 
-    public TripForecastResponse(int tripDaysConsideredByApi, Weather weatherBeforeFlight, List<Weather> weatherAfterFlight) {
-        this.tripDaysConsideredByApi = tripDaysConsideredByApi;
+    public TripForecastResponse(Weather weatherBeforeFlight, List<Weather> weatherAfterFlight) {
         this.weatherBeforeFlight = weatherBeforeFlight;
         this.weatherAfterFlight = weatherAfterFlight;
     }
 
-    private int tripDaysConsideredByApi = 3;
     private String youWillNeedBeforeFlight;
     private String youWillNeedAfterFlight;
     private Weather weatherBeforeFlight;

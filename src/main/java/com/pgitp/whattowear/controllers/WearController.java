@@ -14,13 +14,6 @@ public class WearController {
     @Autowired
     private WhatToWearCalculate whatToWearCalculate;
 
-    @GetMapping("/now/{city}")
-    @ResponseBody
-    String getWhatToWearForToday(@PathVariable("city") String city) {
-        return this.whatToWearCalculate.calculateForNow(city);
-    }
-
-    // TODO zmien response na json ktory dzieli na to co przed i to co po locie
     @PostMapping(path = "/airplane-trip", consumes = "application/json", produces = "application/json")
     @ResponseBody
     TripForecastResponse getAirplaneForecast(@RequestBody @Valid TripForecastRequest tripForecastRequest) {

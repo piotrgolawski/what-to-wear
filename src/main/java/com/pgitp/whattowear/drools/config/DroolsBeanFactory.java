@@ -1,4 +1,4 @@
-package com.pgitp.whattowear.config;
+package com.pgitp.whattowear.drools.config;
 
 import org.kie.api.KieServices;
 import org.kie.api.builder.*;
@@ -16,11 +16,11 @@ public class DroolsBeanFactory {
         add("SuggestWear.drl");
     }};
 
-    private KieServices kieServices=KieServices.Factory.get();
+    private final KieServices kieServices=KieServices.Factory.get();
 
     private void getKieRepository() {
         final KieRepository kieRepository = kieServices.getRepository();
-        kieRepository.addKieModule(() -> kieRepository.getDefaultReleaseId());
+        kieRepository.addKieModule(kieRepository::getDefaultReleaseId);
     }
 
     public KieSession getKieSession(){
@@ -28,7 +28,6 @@ public class DroolsBeanFactory {
         KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
 
         ruleFiles.forEach(ruleFile -> kieFileSystem.write(ResourceFactory.newClassPathResource(RULES_PATH + ruleFile)));
-
 
         KieBuilder kb = kieServices.newKieBuilder(kieFileSystem);
         kb.buildAll();

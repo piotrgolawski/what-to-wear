@@ -1,4 +1,4 @@
-package com.pgitp.whattowear.forecastApi.models;
+package com.pgitp.whattowear.forecastApi.weatherAPI.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -12,10 +12,8 @@ import java.util.List;
 public class Forecastday {
     @JsonProperty("date")
     public String date;
-//    @JsonProperty("date_epoch")
-//    public Long dateEpoch;
     @JsonProperty("day")
     public Day day;
-//    @JsonProperty("hour")
-//    public List<Hour> hour = null;
+    @JsonProperty("hour")
+    private List<Hour> hours = Lists.newArrayList();
 }

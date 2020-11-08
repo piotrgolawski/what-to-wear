@@ -2,8 +2,8 @@ package com.pgitp.whattowear;
 
 import com.pgitp.whattowear.classes.WhatToWearCalculate;
 import com.pgitp.whattowear.controllers.WearController;
-import com.pgitp.whattowear.forecastApi.WeatherApi;
-import com.pgitp.whattowear.service.EquipmentService;
+import com.pgitp.whattowear.forecastApi.weatherAPI.WeatherApi;
+import com.pgitp.whattowear.drools.service.EquipmentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
